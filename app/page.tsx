@@ -31,7 +31,7 @@ export default async function Home({ searchParams }: { searchParams: { [key: str
   }
 
   let data = await fetch(url);
-  var users = '';
+  let users: { EmailAddress: string; EmailName: string; EmailURL: string; password: string; }[] = [];
   await data.json().then((d)=>{
     users = d["result"]
   });
